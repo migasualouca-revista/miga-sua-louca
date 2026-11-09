@@ -60,6 +60,7 @@ if (!modoEditora && typeof gtag === 'function')
     edicao: active.folder,
     numero_pagina: page + 1
   });
+  }
 function update(page){
  count.innerHTML=`${page+1} / ${active.pages}<br>Arraste a folha para virar`;
  prev.disabled=page===0;next.disabled=page===active.pages-1;
