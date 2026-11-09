@@ -10,7 +10,13 @@
 window.dataLayer=window.dataLayer||[];
 function gtag(){dataLayer.push(arguments)}
 gtag('js',new Date());
-gtag('config','G-721J121BK1');
+
+const modoEditora = new URLSearchParams(window.location.search)
+  .get('modo') === 'editora';
+
+if (!modoEditora) {
+  gtag('config', 'G-721J121BK1');
+}
 </script>
 <style>
 :root{color-scheme:light}*{box-sizing:border-box}body{margin:0;background:#fff9f5;color:#251720;font-family:Arial,sans-serif}
@@ -48,8 +54,12 @@ const prev=document.getElementById('prev'),next=document.getElementById('next'),
 function record(page){
  if(page<0||page>=active.pages||page===lastPage)return;
  lastPage=page;
- if(typeof gtag==='function')gtag('event','pagina_folheada',{edicao:active.folder,numero_pagina:page+1});
-}
+ 
+if (!modoEditora && typeof gtag === 'function')
+  gtag('event', 'pagina_folheada', {
+    edicao: active.folder,
+    numero_pagina: page + 1
+  });
 function update(page){
  count.innerHTML=`${page+1} / ${active.pages}<br>Arraste a folha para virar`;
  prev.disabled=page===0;next.disabled=page===active.pages-1;
