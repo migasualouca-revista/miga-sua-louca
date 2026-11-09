@@ -72,7 +72,11 @@ function openIssue(key){
  document.getElementById('zoom').textContent='Ampliar';
  document.getElementById('issue-title').textContent=active.title;
  reader.classList.add('active');
- if(typeof gtag==='function')gtag('event','edicao_aberta',{edicao:active.folder,titulo_edicao:active.title});
+if (!modoEditora && typeof gtag === 'function')
+  gtag('event', 'edicao_aberta', {
+    edicao: active.folder,
+    titulo_edicao: active.title
+  });
  if(typeof St==='undefined'||typeof St.PageFlip!=='function'){
   count.textContent='Não foi possível carregar o leitor. Verifique sua conexão.';return;
  }
