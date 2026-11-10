@@ -1,0 +1,117 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Miga, Sua Louca! — Banca Digital</title>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-721J121BK1"></script>
+<script>
+window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());
+const modoEditora=new URLSearchParams(location.search).get('modo')==='editora';
+if(!modoEditora)gtag('config','G-721J121BK1');
+</script>
+<style>
+:root{color-scheme:light}*{box-sizing:border-box}body{margin:0;background:#fff9f5;color:#251720;font-family:Arial,sans-serif}
+header{text-align:center;padding:42px 15px 30px;border-bottom:1px solid #ead9e1}header small{letter-spacing:5px;color:#a43e68;font-weight:700}header h1{color:#e50064;font-size:clamp(48px,10vw,86px);margin:12px 0 0}header em{font:bold italic 34px Georgia,serif}header p{color:#73666d}
+main{max-width:950px;margin:auto;padding:35px 22px 80px}h2{font:bold clamp(27px,5vw,43px) Georgia,serif}.grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:24px}.issue{border:0;background:none;text-align:left;cursor:pointer;color:inherit;font:inherit;padding:0}.issue img{width:100%;aspect-ratio:3/4;object-fit:cover;box-shadow:0 4px 18px #0002}.issue strong{display:block;margin-top:12px;font-size:18px}.issue span{display:block;color:#97516f;margin-top:6px}
+.reader{display:none;position:fixed;inset:0;background:#161018;color:white;z-index:2;flex-direction:column}.reader.active{display:flex}.bar{display:flex;align-items:center;justify-content:space-between;padding:12px 15px;background:#281924;gap:10px}.bar strong{color:#ffd361}.bar button,.nav button{border:1px solid #76576b;border-radius:25px;background:#51334b;color:white;padding:11px 16px;font-weight:bold;cursor:pointer}
+.stage{flex:1;min-height:0;display:flex;justify-content:center;align-items:center;overflow:auto;padding:12px;touch-action:pan-y}.flip-host{width:100%;height:100%;display:flex;justify-content:center;align-items:center}.flip-host.enlarged{min-width:125%;min-height:125%}.flip-host .page{background:white}.flip-host .page img{width:100%;height:100%;object-fit:fill;display:block;pointer-events:none;user-select:none}.flip-host .stf__parent{margin:auto!important}
+.fallback-page{height:100%;width:min(100%,520px);display:flex;justify-content:center;align-items:center;margin:auto}.fallback-page img{max-width:100%;max-height:100%;object-fit:contain;display:block}
+.nav{display:flex;justify-content:space-between;align-items:center;padding:13px;background:#281924;gap:10px}.nav button:disabled{opacity:.35}.nav span{text-align:center;font-size:14px}footer{text-align:center;color:#806e78;padding:35px}button:focus-visible{outline:3px solid #ffca46}
+@media(max-width:600px){main{padding:25px 16px 60px}.grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}.issue strong{font-size:15px}.issue span{font-size:12px}h2{font-size:27px}.stage{padding:6px}.bar button,.nav button{padding:10px 12px}}
+</style></head><body>
+<header><small>REVISTA DIGITAL</small><h1>MIGA</h1><em>Sua Louca!</em><p>Tem coisa que só uma revista entende.</p></header>
+<main><h2>Escolha uma capa e folheie</h2><div class="grid">
+<button class="issue" data-issue="homem"><img src="edicoes/homem-bonito/01.png" alt="Capa da revista Homem bonito dá trabalho?"><strong>Homem bonito dá trabalho?</strong><span>Comportamento · 5 páginas</span></button>
+<button class="issue" data-issue="faxina"><img src="edicoes/faxina-fim-de-ano/01.png" alt="Capa da revista Faxina de Fim de Ano"><strong>Faxina de Fim de Ano</strong><span>Organização e humor · 6 páginas</span></button>
+<button class="issue" data-issue="rosa"><img src="edicoes/rosa-choque/01.png" alt="Capa da revista Rosa-Choque, Meu Primeiro Amor!"><strong>Rosa-Choque, Meu Primeiro Amor!</strong><span>Moda e verão · 5 páginas</span></button>
+<button class="issue" data-issue="bonita"><img src="edicoes/bonita-cheirosa-parcelada/01.png" alt="Capa Bonita, Cheirosa e Perigosamente Parcelada"><strong>Bonita, Cheirosa e Perigosamente Parcelada!</strong><span>Beleza e humor · 4 páginas</span></button>
+<button class="issue" data-issue="adulto"><img src="edicoes/ninguem-sabe-o-que-esta-fazendo/01.png" alt="Capa Ninguém Sabe o Que Está Fazendo"><strong>Ninguém Sabe o Que Está Fazendo!</strong><span>Vida adulta · 4 páginas</span></button>
+<button class="issue" data-issue="adolescencia"><img src="edicoes/a-adolescencia-voltou/01.png" alt="Capa A Adolescência Voltou"><strong>A Adolescência Voltou!</strong><span>Comportamento · 6 páginas</span></button>
+<button class="issue" data-issue="vermelho"><img src="edicoes/o-vermelho-incomoda/01.png" alt="Capa O Vermelho Incomoda"><strong>O Vermelho Incomoda?</strong><span>Beleza · 5 páginas</span></button>
+<button class="issue" data-issue="pulseirinha"><img src="edicoes/pulseirinha-do-reggae/01.png" alt="Capa Cadê a Pulseirinha do Reggae?"><strong>Cadê a Pulseirinha do Reggae?</strong><span>Nostalgia · 5 páginas</span></button>
+</div></main><footer>MIGA, SUA LOUCA! · Nossa banca digital</footer>
+<section class="reader" id="reader" role="dialog" aria-modal="true" aria-label="Leitor da revista">
+<div class="bar"><div><strong>MIGA, SUA LOUCA!</strong><div id="issue-title" style="font-size:13px"></div></div><div><button id="zoom">Ampliar</button> <button id="close">Fechar ×</button></div></div>
+<div class="stage" id="stage"><div class="flip-host" id="flip-host"><div id="book"></div></div></div>
+<div class="nav"><button id="prev">← Anterior</button><span id="count"></span><button id="next">Próxima →</button></div>
+</section>
+<script src="https://cdn.jsdelivr.net/npm/page-flip@2.0.7/dist/js/page-flip.browser.js"></script>
+<script>
+const issues={
+ homem:{title:'Homem bonito dá trabalho?',folder:'homem-bonito',pages:5},
+ faxina:{title:'Faxina de Fim de Ano',folder:'faxina-fim-de-ano',pages:6},
+ rosa:{title:'Rosa-Choque, Meu Primeiro Amor!',folder:'rosa-choque',pages:5},
+ bonita:{title:'Bonita, Cheirosa e Perigosamente Parcelada!',folder:'bonita-cheirosa-parcelada',pages:4},
+ adulto:{title:'Ninguém Sabe o Que Está Fazendo!',folder:'ninguem-sabe-o-que-esta-fazendo',pages:4},
+ adolescencia:{title:'A Adolescência Voltou!',folder:'a-adolescencia-voltou',pages:6},
+ vermelho:{title:'O Vermelho Incomoda?',folder:'o-vermelho-incomoda',pages:5},
+ pulseirinha:{title:'Cadê a Pulseirinha do Reggae?',folder:'pulseirinha-do-reggae',pages:5}
+};
+let active=issues.homem,flipbook=null,lastPage=-1,fallbackPage=0;
+const reader=document.getElementById('reader'),host=document.getElementById('flip-host'),book=document.getElementById('book');
+const prev=document.getElementById('prev'),next=document.getElementById('next'),count=document.getElementById('count');
+function record(page){
+ if(page<0||page>=active.pages||page===lastPage)return;
+ lastPage=page;
+ if(!modoEditora&&typeof gtag==='function')gtag('event','pagina_folheada',{edicao:active.folder,numero_pagina:page+1});
+}
+function update(page){
+ count.innerHTML=`${page+1} / ${active.pages}<br>${flipbook?'Arraste a folha para virar':'Use as setas para folhear'}`;
+ prev.disabled=page===0;next.disabled=page===active.pages-1;record(page);
+}
+function showFallback(page){
+ fallbackPage=Math.max(0,Math.min(active.pages-1,page));
+ book.replaceChildren();const div=document.createElement('div');div.className='fallback-page';
+ const img=document.createElement('img');img.alt=`Página ${fallbackPage+1} de ${active.pages}`;
+ img.src=`edicoes/${active.folder}/${String(fallbackPage+1).padStart(2,'0')}.png`;
+ div.appendChild(img);book.appendChild(div);update(fallbackPage);
+}
+function openIssue(key){
+ if(!issues[key])return;
+ active=issues[key];lastPage=-1;fallbackPage=0;
+ if(flipbook){try{flipbook.destroy()}catch(e){console.warn(e)}flipbook=null}
+ book.replaceChildren();host.classList.remove('enlarged');
+ document.getElementById('zoom').textContent='Ampliar';
+ document.getElementById('issue-title').textContent=active.title;
+ reader.classList.add('active');
+ if(!modoEditora&&typeof gtag==='function')gtag('event','edicao_aberta',{edicao:active.folder,titulo_edicao:active.title});
+ if(typeof St==='undefined'||typeof St.PageFlip!=='function'){showFallback(0);return}
+ try{
+  for(let n=1;n<=active.pages;n++){
+   const sheet=document.createElement('div');sheet.className='page';
+   if(n===1)sheet.dataset.density='hard';
+   const img=document.createElement('img');img.alt=`Página ${n} de ${active.pages}`;
+   img.src=`edicoes/${active.folder}/${String(n).padStart(2,'0')}.png`;
+   sheet.appendChild(img);book.appendChild(sheet);
+  }
+  flipbook=new St.PageFlip(book,{
+   width:450,height:600,size:'stretch',minWidth:260,maxWidth:520,
+   minHeight:347,maxHeight:693,drawShadow:true,flippingTime:950,
+   usePortrait:true,showCover:true,startPage:0,
+   mobileScrollSupport:false,swipeDistance:25,clickEventForward:true,
+   maxShadowOpacity:.55,autoSize:true
+  });
+  flipbook.loadFromHTML(book.querySelectorAll('.page'));
+  flipbook.on('flip',e=>update(e.data));update(0);
+ }catch(error){
+  console.error('Leitor com efeito de páginas indisponível:',error);
+  try{if(flipbook)flipbook.destroy()}catch(e){}
+  flipbook=null;showFallback(0);
+ }
+}
+document.querySelectorAll('[data-issue]').forEach(button=>button.addEventListener('click',()=>openIssue(button.dataset.issue)));
+document.getElementById('close').onclick=()=>{
+ reader.classList.remove('active');if(flipbook){try{flipbook.destroy()}catch(e){}flipbook=null}book.replaceChildren();
+};
+prev.onclick=()=>{if(flipbook)flipbook.flipPrev();else showFallback(fallbackPage-1)};
+next.onclick=()=>{if(flipbook)flipbook.flipNext();else showFallback(fallbackPage+1)};
+document.getElementById('zoom').onclick=()=>{
+ host.classList.toggle('enlarged');document.getElementById('zoom').textContent=host.classList.contains('enlarged')?'Reduzir':'Ampliar';
+ if(flipbook)flipbook.update();
+};
+document.addEventListener('keydown',e=>{
+ if(!reader.classList.contains('active'))return;
+ if(e.key==='Escape')document.getElementById('close').click();
+ if(e.key==='ArrowRight')next.click();if(e.key==='ArrowLeft')prev.click();
+});
+</script></body></html>
