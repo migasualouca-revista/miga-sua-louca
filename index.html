@@ -34,6 +34,10 @@ main{max-width:950px;margin:auto;padding:35px 22px 80px}h2{font:bold clamp(27px,
 <button class="issue" data-issue="homem"><img src="edicoes/homem-bonito/01.png" alt="Capa da revista Homem bonito dá trabalho?"><strong>Homem bonito dá trabalho?</strong><span>Comportamento · 5 páginas</span></button>
 <button class="issue" data-issue="faxina"><img src="edicoes/faxina-fim-de-ano/01.png" alt="Capa da revista Faxina de Fim de Ano"><strong>Faxina de Fim de Ano</strong><span>Organização e humor · 6 páginas</span></button>
 <button class="issue" data-issue="rosa"><img src="edicoes/rosa-choque/01.png" alt="Capa da revista Rosa-Choque, Meu Primeiro Amor!"><strong>Rosa-Choque, Meu Primeiro Amor!</strong><span>Moda e verão · 5 páginas</span></button>
+<button class="issue" data-issue="bonita"><img src="edicoes/bonita-cheirosa-parcelada/01.png" alt="Capa Bonita, Cheirosa e Perigosamente Parcelada"><strong>Bonita, Cheirosa e Perigosamente Parcelada!</strong><span>Beleza e humor · 4 páginas</span></button>
+<button class="issue" data-issue="adulto"><img src="edicoes/ninguem-sabe-o-que-esta-fazendo/01.png" alt="Capa Ninguém Sabe o Que Está Fazendo"><strong>Ninguém Sabe o Que Está Fazendo!</strong><span>Vida adulta · 4 páginas</span></button>
+<button class="issue" data-issue="adolescencia"><img src="edicoes/a-adolescencia-voltou/01.png" alt="Capa A Adolescência Voltou"><strong>A Adolescência Voltou!</strong><span>Comportamento · 6 páginas</span></button>
+<button class="issue" data-issue="vermelho"><img src="edicoes/o-vermelho-incomoda/01.png" alt="Capa O Vermelho Incomoda"><strong>O Vermelho Incomoda?</strong><span>Beleza · 5 páginas</span></button>
 </div></main>
 <footer>MIGA, SUA LOUCA! · Nossa banca digital</footer>
 <section class="reader" id="reader" role="dialog" aria-label="Leitor da revista">
@@ -44,9 +48,14 @@ main{max-width:950px;margin:auto;padding:35px 22px 80px}h2{font:bold clamp(27px,
 <script src="https://cdn.jsdelivr.net/npm/page-flip@2.0.7/dist/js/page-flip.browser.js"></script>
 <script>
 const issues={
+ const issues={
  homem:{title:'Homem bonito dá trabalho?',folder:'homem-bonito',pages:5},
  faxina:{title:'Faxina de Fim de Ano',folder:'faxina-fim-de-ano',pages:6},
- rosa:{title:'Rosa-Choque, Meu Primeiro Amor!',folder:'rosa-choque',pages:5}
+ rosa:{title:'Rosa-Choque, Meu Primeiro Amor!',folder:'rosa-choque',pages:5},
+ bonita:{title:'Bonita, Cheirosa e Perigosamente Parcelada!',folder:'bonita-cheirosa-parcelada',pages:4},
+ adulto:{title:'Ninguém Sabe o Que Está Fazendo!',folder:'ninguem-sabe-o-que-esta-fazendo',pages:4},
+ adolescencia:{title:'A Adolescência Voltou!',folder:'a-adolescencia-voltou',pages:6},
+ vermelho:{title:'O Vermelho Incomoda?',folder:'o-vermelho-incomoda',pages:5}
 };
 let active=issues.homem,flipbook=null,lastPage=-1;
 const reader=document.getElementById('reader'),host=document.getElementById('flip-host'),book=document.getElementById('book');
